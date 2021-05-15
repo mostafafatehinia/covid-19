@@ -16,10 +16,8 @@
 
     <!-- Bootstrap core CSS -->
 <link href="bootstrap-5.0.1-dist/css/bootstrap.min.css" rel="stylesheet">
-<link
-  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css"
-  rel="stylesheet"
-/>
+    <!-- flags CDN -->
+<link  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet"/>
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
 <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
@@ -246,7 +244,14 @@
           </tr>
         </tbody>
       </table>
-    
+      <br>
+      <br>
+      <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+          <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+      </div> 
     </div>
     <br>
     <hr class="featurette-divider">
@@ -305,6 +310,36 @@
 
     <script src="bootstrap-5.0.1-dist/js/bootstrap.bundle.min.js"></script>
 
-      
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+    <script>
+      var ctx = document.getElementById('myChart');
+      var myChart = new Chart(ctx, {
+          type: 'doughnut',
+          data: {
+              labels: ['Death', 'Recovered'],
+              datasets: [{
+                  label: '# of Votes',
+                  data: [12, 19],
+                  backgroundColor: [
+                      'rgba(220, 53, 69)',
+                      'rgba(0, 183, 74)'
+                  ],
+                  borderColor: [
+                      'rgba(255, 99, 132, 1)',
+                      'rgba(54, 162, 235, 1)'
+                  ],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              scales: {
+                  y: {
+                      beginAtZero: true
+                  }
+              },
+              animation:false
+          }
+      });
+    </script>
   </body>
 </html>
