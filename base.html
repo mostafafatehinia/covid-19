@@ -11,11 +11,15 @@
 
     <link rel="icon" href="bootstrap-5.0.1-dist/img/covid.png">
 
+
     
 
     <!-- Bootstrap core CSS -->
 <link href="bootstrap-5.0.1-dist/css/bootstrap.min.css" rel="stylesheet">
-
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css"
+  rel="stylesheet"
+/>
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
 <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
@@ -44,6 +48,9 @@
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
         }
+      }
+      .bg-gray{
+          background-color: rgba(120, 119, 119, 0.2);
       }
     </style>
 
@@ -209,14 +216,19 @@
     <br>
     <div class="container">
         
-        <select class="form-select" aria-label="Default select example">
-            <option selected>all</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-        </select>
+       <div class="container row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <select class="form-select" aria-label="Default select example">
+                <option selected>all</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+        <br><br>
 
-    <table class="table table-hover">
+    <table class="table">
         <thead>
           <tr>
             <th scope="col">Location</th>
@@ -225,12 +237,12 @@
             <th scope="col">Deaths</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="bg-gray">
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <th scope="row"><i class="flag flag-iran" title="Iran"></i></th>
+            <td>121313</td>
+            <td>123</td>
+            <td>432</td>
           </tr>
         </tbody>
       </table>
