@@ -57,6 +57,13 @@
       .slider{
         box-shadow: 10px 10px 10px grey;
       }
+      .footer{
+        margin: 0;
+        padding: 25px;
+        background-color: #262626;
+        color: white;
+        height: 80px;
+      }
      </style>
 
     
@@ -245,61 +252,7 @@
         </div>
       </div>
     </div>
-    <!-- <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">Delaying a COVID <span class="text-muted">vaccine’s second dose boosts immune response</span></h2>
-        <p class="lead">
-          Facing a limited vaccine supply, the United Kingdom embarked on a bold public-health experiment at the end of 2020: delaying second doses of COVID-19 vaccines in a bid to maximize the number of people who would be at least partially protected from hospitalization and death.
-          
-          Now, a study suggests that delaying the second dose of the Pfizer–BioNTech mRNA vaccine could boost antibody responses after the second inoculation more than threefold in those older than 80.</p>
-      </div>
-      <div class="col-md-5">
-          <img src="bootstrap-5.0.1-dist/img/news1.jpg" width="100%" height="400px" alt="">
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">Indian Covid variant: <span class="text-muted"> How much faster does it spread?</span></h2>
-        <p class="lead">England's full relaxation of rules in June is in jeopardy and there is the looming spectre of greater pressure on the NHS.
-
-          The thorn in the plans is the variant of coronavirus that emerged in India - B.1.617.2 - and has started spreading around the world.
-          
-          Concerns have been mounting over the past week and, for the first time, the scientists advising the UK government are now confident it does spread more easily.
-          
-          The expectation is the variant will edge out the one that emerged in Kent and eventually "dominate" cases in the UK.
-          
-          We are in a race between the virus and the vaccine. Easing restrictions on Monday and a more transmissible variant means the virus will move even faster.
-          
-          </p>
-      </div>
-      <div class="col-md-5 order-md-1">
-        <img src="bootstrap-5.0.1-dist/img/news2.jpg" width="100%" height="400px" alt="">
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">China cancels Everest spring climbing <span class="text-muted"> over coronavirus worries</span></h2>
-        <p class="lead">China has decided to cancel the 2021 spring climbing season from the Tibetan side of Mount Everest, the world’s tallest peak, because of coronavirus concerns, the official Xinhua news agency said on Saturday.
-
-          It cited a notice on Friday from the General Administration of Sport, following a severe pandemic situation.
-          
-          The Himalayan nation of Nepal, which is so short of oxygen canisters it has asked mountaineers to bring back their empties, has issued a record 408 permits to climb Everest in the April-May season after last year’s closure.
-          
-          </p>
-      </div>
-      <div class="col-md-5">
-        <img src="bootstrap-5.0.1-dist/img/new3.jpg" width="100%" height="400px" alt="">
-      </div>
-    </div> -->
-
-    <hr class="featurette-divider">
-
+    <br>
     <!-- /END THE FEATURETTES -->
 
   </div><!-- /.container -->
@@ -308,42 +261,46 @@
   <!-- FOOTER -->
 
 </main>
-    <script src="bootstrap-5.0.1-dist/js/bootstrap.bundle.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
-    <script>
-      var ctx = document.getElementById('myChart');
-      var myChart = new Chart(ctx, {
-          type: 'doughnut',
-          data: {
-              labels: ['Death', 'Recovered'],
-              datasets: [{
-                  label: '# of Votes',
-                  data: [12, 19],
-                  backgroundColor: [
-                      'rgba(220, 53, 69)',
-                      'rgba(0, 183, 74)'
-                  ],
-                  borderColor: [
-                      'rgba(255, 99, 132, 1)',
-                      'rgba(54, 162, 235, 1)'
-                  ],
-                  borderWidth: 1
-              }]
-          },
-          options: {
-              scales: {
-                  y: {
-                      beginAtZero: true
-                  }
-              },
-              animation:false
-          }
-      });
-    </script>
-    <footer class="footer">
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus magnam enim sapiente placeat eius nihil pariatur rem perspiciatis similique iure dolorem aliquid ipsa, ipsam totam asperiores quibusdam a minus fugit.</p>
+   
+    <footer class="footer" style="text-align: center;">
+      <div class="container row">
+        <div class="col-lg-6">Email : mostafafatehinia@gmail.com</div>
+        <div class="col-lg-6">Phone : +7 777 777</div>
+      </div>
     </footer>
-    
+   
   </body>
+  <script src="bootstrap-5.0.1-dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+  <script>
+    var ctx = document.getElementById('myChart');
+    var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Death', 'Recovered'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19],
+                backgroundColor: [
+                    'rgba(220, 53, 69)',
+                    'rgba(0, 183, 74)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            animation:false
+        }
+    });
+  </script>
 </html>
