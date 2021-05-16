@@ -18,14 +18,6 @@
 <link href="bootstrap-5.0.1-dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- flags CDN -->
 <link  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet"/>
-    <!-- Favicons -->
-<link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
-<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
-<meta name="theme-color" content="#7952b3">
 
 
     <style>
@@ -50,7 +42,22 @@
       .bg-gray{
           background-color: rgba(120, 119, 119, 0.2);
       }
-    </style>
+      .lead{
+        border-left: 2px solid #e52224;
+        padding-left: 16px;
+        text-align: justify;
+      }
+      .advice-box{
+        box-shadow: 7px 6px 10px grey;
+        width: 140px;
+        height: 140px;
+        border: 1px solid #e52224;
+      }
+
+      .slider{
+        box-shadow: 10px 10px 10px grey;
+      }
+     </style>
 
     
     <!-- Custom styles for this template -->
@@ -71,83 +78,31 @@
             <a class="nav-link" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contatc Us</a>
+            <a class="nav-link" href="#">Contact Us</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#" tabindex="-1" >About</a>
           </li>
         </ul>
-        <!-- <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> -->
       </div>
     </div>
   </nav>
 </header>
 
 <main>
-    <br><br><br><br><br>
-    <div class="row">
-        <div class="col-lg-4"></div>
-        <div class="col-lg-4"><img src="bootstrap-5.0.1-dist/img/NNPHI-COVID-19-icon.png" alt=""></div>
-        <div class="col-lg-4"></div>
-    </div>
+    <div class="container">
+      <br><br><br><br><br>
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h2 class="featurette-heading">The COVID-19 pandemic, <span class="text-muted">also known as the coronavirus pandemic,</span></h2>
+          <p class="lead"> is an ongoing global pandemic of coronavirus disease 2019 (COVID-19) caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). The virus was first identified in December 2019 in Wuhan, China. The World Health Organization declared a Public Health Emergency of International Concern regarding COVID-19 on 30 January 2020, and later declared a pandemic on 11 March 2020. As of 15 May 2021, more than 162 million cases have been confirmed, with more than 3.36 million deaths attributed to COVID-19, making it one of the deadliest pandemics in history.</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img src="bootstrap-5.0.1-dist/img/N2005P70039H-1100x733.jpg" width="100%" height="400px" class="slider" alt="">
+        </div>
+      </div>
     <br><br>
-  <!-- <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="bootstrap-5.0.1-dist/img/covid.png" alt="">
-        <div class="container">
-          <div class="carousel-caption text-start">
-            <h1>Example headline.</h1>
-            <p>Some representative placeholder content for the first slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
 
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>Some representative placeholder content for the second slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-
-        <div class="container">
-          <div class="carousel-caption text-end">
-            <h1>One more for good measure.</h1>
-            <p>Some representative placeholder content for the third slide of this carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div> -->
-
-
-  <!-- Marketing messaging and featurettes
-  ================================================== -->
-  <!-- Wrap the rest of the page in another container to center all the content. -->
 
   <div class="container marketing">
     <hr class="featurette-divider">
@@ -156,16 +111,16 @@
     <!-- Three columns of text below the carousel -->
     <div class="row">
       <div class="col-lg-2 content-center">
-        <div style="width: 140px;height: 140px; border: 1px solid #e52224;" class="rounded-circle">
+        <div class="rounded-circle advice-box">
             <img src="bootstrap-5.0.1-dist/img/house.png" alt="">
         </div>
 
         <h2>Stay</h2>
-        <p>Home.</p>
+        <p>at Home.</p>
       </div><!-- /.col-lg-2 -->
       <div class="col-lg-2 content-center">
         
-        <div style="width: 140px;height: 140px; border: 1px solid #e52224;" class="rounded-circle">
+        <div class="rounded-circle advice-box">
             <img src="bootstrap-5.0.1-dist/img/social-distancing .png" alt="">
         </div>
 
@@ -173,7 +128,7 @@
         <p>a Safe Distance.</p>
       </div><!-- /.col-lg-2 -->
       <div class="col-lg-2 content-center">
-        <div style="width: 140px;height: 140px; border: 1px solid #e52224;" class="rounded-circle">
+        <div class="rounded-circle advice-box">
             <img src="bootstrap-5.0.1-dist/img/washing-hand.png" alt="">
         </div>
         <h2>Wash</h2>
@@ -181,7 +136,7 @@
       </div><!-- /.col-lg-2 -->
       <div class="col-lg-2 content-center">
 
-        <div style="width: 140px;height: 140px; border: 1px solid #e52224;" class="rounded-circle">
+        <div class="rounded-circle advice-box">
             <img src="bootstrap-5.0.1-dist/img/cough.png" style="margin-left:4px;" alt="">
         </div>
 
@@ -190,7 +145,7 @@
       </div><!-- /.col-lg-2 -->
       <div class="col-lg-2 content-center">
 
-        <div style="width: 140px;height: 140px; border: 1px solid #e52224;" class="rounded-circle">
+        <div class="rounded-circle advice-box">
             <img src="bootstrap-5.0.1-dist/img/fever.png" style="margin-left:4px;" alt="">
         </div>
 
@@ -199,7 +154,7 @@
       </div><!-- /.col-lg-2 -->
       <div class="col-lg-2 content-center">
 
-        <div style="width: 140px;height: 140px; border: 1px solid #e52224;" class="rounded-circle">
+        <div class="rounded-circle advice-box">
             <img src="bootstrap-5.0.1-dist/img/mask.png" style="margin-left:4px;" alt="">
         </div>
 
@@ -255,15 +210,19 @@
     </div>
     <br>
     <hr class="featurette-divider">
+    <h1 style="font-weight: bold;">News</h1>
+    <br>
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-        <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
+        <h2 class="featurette-heading">Delaying a COVID <span class="text-muted">vaccine’s second dose boosts immune response</span></h2>
+        <p class="lead">
+          Facing a limited vaccine supply, the United Kingdom embarked on a bold public-health experiment at the end of 2020: delaying second doses of COVID-19 vaccines in a bid to maximize the number of people who would be at least partially protected from hospitalization and death.
+          
+          Now, a study suggests that delaying the second dose of the Pfizer–BioNTech mRNA vaccine could boost antibody responses after the second inoculation more than threefold in those older than 80.</p>
       </div>
       <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
+          <img src="bootstrap-5.0.1-dist/img/news1.jpg" width="100%" height="400px" alt="">
       </div>
     </div>
 
@@ -271,12 +230,21 @@
 
     <div class="row featurette">
       <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-        <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+        <h2 class="featurette-heading">Indian Covid variant: <span class="text-muted"> How much faster does it spread?</span></h2>
+        <p class="lead">England's full relaxation of rules in June is in jeopardy and there is the looming spectre of greater pressure on the NHS.
+
+          The thorn in the plans is the variant of coronavirus that emerged in India - B.1.617.2 - and has started spreading around the world.
+          
+          Concerns have been mounting over the past week and, for the first time, the scientists advising the UK government are now confident it does spread more easily.
+          
+          The expectation is the variant will edge out the one that emerged in Kent and eventually "dominate" cases in the UK.
+          
+          We are in a race between the virus and the vaccine. Easing restrictions on Monday and a more transmissible variant means the virus will move even faster.
+          
+          </p>
       </div>
       <div class="col-md-5 order-md-1">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
+        <img src="bootstrap-5.0.1-dist/img/news2.jpg" width="100%" height="400px" alt="">
       </div>
     </div>
 
@@ -284,12 +252,17 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-        <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+        <h2 class="featurette-heading">China cancels Everest spring climbing <span class="text-muted"> over coronavirus worries</span></h2>
+        <p class="lead">China has decided to cancel the 2021 spring climbing season from the Tibetan side of Mount Everest, the world’s tallest peak, because of coronavirus concerns, the official Xinhua news agency said on Saturday.
+
+          It cited a notice on Friday from the General Administration of Sport, following a severe pandemic situation.
+          
+          The Himalayan nation of Nepal, which is so short of oxygen canisters it has asked mountaineers to bring back their empties, has issued a record 408 permits to climb Everest in the April-May season after last year’s closure.
+          
+          </p>
       </div>
       <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
+        <img src="bootstrap-5.0.1-dist/img/new3.jpg" width="100%" height="400px" alt="">
       </div>
     </div>
 
