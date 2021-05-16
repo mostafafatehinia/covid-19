@@ -28,15 +28,33 @@
         -moz-user-select: none;
         user-select: none;
       }
-      body{
+      *{
           overflow-x: hidden;
       }
       .content-center>h2,.content-center>p{
-        padding-left: 24px;
+        padding-left: 30px;
       }
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
+        }
+      }
+      @media (max-width : 600px) { 
+      .marketing > .row{
+        text-align: center;
+        }
+      .rounded-circle{
+        margin: 0 auto;
+        }
+        .content-center>h2, .content-center>p {
+          padding-left: 10px;
+          }
+        .col-xs-12> .card {
+          margin-bottom:10px;
+        }
+        .container.row {
+          width: 350px;
+          margin-left: -25px;
         }
       }
       .bg-gray{
@@ -45,6 +63,7 @@
       .lead{
         border-left: 2px solid #e52224;
         padding-left: 16px;
+        padding-right: 16px;
         text-align: justify;
       }
       .advice-box{
@@ -100,12 +119,12 @@
     <div class="container">
       <br><br><br><br><br>
       <div class="row featurette">
-        <div class="col-md-7 order-md-2">
+        <div class="col-xs-12 col-sm-12 col-md-7 col-xs-12 order-md-2">
           <h2 class="featurette-heading">The COVID-19 pandemic, <span class="text-muted">also known as the coronavirus pandemic,</span></h2>
           <p class="lead"> is an ongoing global pandemic of coronavirus disease 2019 (COVID-19) caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). The virus was first identified in December 2019 in Wuhan, China. The World Health Organization declared a Public Health Emergency of International Concern regarding COVID-19 on 30 January 2020, and later declared a pandemic on 11 March 2020. As of 15 May 2021, more than 162 million cases have been confirmed, with more than 3.36 million deaths attributed to COVID-19, making it one of the deadliest pandemics in history.</p>
         </div>
-        <div class="col-md-5 order-md-1">
-          <img src="bootstrap-5.0.1-dist/img/N2005P70039H-1100x733.jpg" width="100%" height="400px" class="slider" alt="">
+        <div class="col-xs-12 col-sm-12 col-md-5 col-xs-12 order-md-1">
+          <img src="bootstrap-5.0.1-dist/img/N2005P70039H-1100x733.jpg" width="100%" height="100%" class="slider" alt="">
         </div>
       </div>
     <br><br>
@@ -117,54 +136,55 @@
     <br>
     <!-- Three columns of text below the carousel -->
     <div class="row">
-      <div class="col-lg-2 content-center">
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2 content-center">
         <div class="rounded-circle advice-box">
             <img src="bootstrap-5.0.1-dist/img/house.png" alt="">
         </div>
-
+        <br>
         <h2>Stay</h2>
         <p>at Home.</p>
       </div><!-- /.col-lg-2 -->
-      <div class="col-lg-2 content-center">
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2 content-center">
         
         <div class="rounded-circle advice-box">
             <img src="bootstrap-5.0.1-dist/img/social-distancing .png" alt="">
         </div>
-
+        <br>
         <h2>Keep</h2>
         <p>a Safe Distance.</p>
       </div><!-- /.col-lg-2 -->
-      <div class="col-lg-2 content-center">
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2 content-center">
         <div class="rounded-circle advice-box">
             <img src="bootstrap-5.0.1-dist/img/washing-hand.png" alt="">
         </div>
+        <br>
         <h2>Wash</h2>
         <p>Hands Often.</p>
       </div><!-- /.col-lg-2 -->
-      <div class="col-lg-2 content-center">
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2 content-center">
 
         <div class="rounded-circle advice-box">
             <img src="bootstrap-5.0.1-dist/img/cough.png" style="margin-left:4px;" alt="">
         </div>
-
+        <br>
         <h2>Cover</h2>
         <p>Your Cough.</p>
       </div><!-- /.col-lg-2 -->
-      <div class="col-lg-2 content-center">
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2 content-center">
 
         <div class="rounded-circle advice-box">
             <img src="bootstrap-5.0.1-dist/img/fever.png" style="margin-left:4px;" alt="">
         </div>
-
+        <br>
         <h2>Sick?</h2>
         <p>Call Ahead.</p>
       </div><!-- /.col-lg-2 -->
-      <div class="col-lg-2 content-center">
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2 content-center">
 
         <div class="rounded-circle advice-box">
             <img src="bootstrap-5.0.1-dist/img/mask.png" style="margin-left:4px;" alt="">
         </div>
-
+        <br>
         <h2>Wear</h2>
         <p>a Mask.</p>
       </div><!-- /.col-lg-2 -->
@@ -188,7 +208,8 @@
         </div>
         <br><br>
 
-    <table class="table">
+    <div class="table-responsive">
+      <table class="table">
         <thead>
           <tr>
             <th scope="col">Location</th>
@@ -206,6 +227,7 @@
           </tr>
         </tbody>
       </table>
+    </div>
       <br>
       <br>
       <div class="row">
@@ -221,7 +243,7 @@
     <br>
     
     <div class="container row">
-      <div class="col-lg-4">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
         <div class="card" style="width: 18rem; border: 1px solid grey;">
           <img src="bootstrap-5.0.1-dist/img/news1.jpg" class="card-img-top" alt="...">
           <div class="card-body">
@@ -231,7 +253,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-4">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
         <div class="card" style="width: 18rem; border: 1px solid grey;">
           <img src="bootstrap-5.0.1-dist/img/news2.jpg" class="card-img-top" alt="...">
           <div class="card-body">
@@ -241,7 +263,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-4">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
         <div class="card" style="width: 18rem; border: 1px solid grey;">
           <img src="bootstrap-5.0.1-dist/img/new3.jpg" class="card-img-top" alt="...">
           <div class="card-body">
