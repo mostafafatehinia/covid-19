@@ -79,3 +79,11 @@ main {
 .newsTitle {
     font-weight: bold;
 }
+
+.footer .row a {
+    color: white;
+}
+
+.footer .row a:hover {
+    color: lightgreen;
+}
