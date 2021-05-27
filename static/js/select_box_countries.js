@@ -32,6 +32,10 @@ select.onchange = function(event) {
         let infoPerCountry = data.dates[date].countries[country]
 
         tableBodyCreate(infoPerCountry)
+        if (myChart) {
+            myChart.destroy()
+        }
+        chartDrawer(infoPerCountry)
 
     })
 }
@@ -39,12 +43,43 @@ select.onchange = function(event) {
 function tableBodyCreate(input) {
     let tbody = document.getElementById('table-body');
     let rate = ((input.today_deaths - input.yesterday_deaths) / input.yesterday_deaths) * 100
-        // console.log(tbody.innerHTML)
     let html = '<tr>';
+
     html += `<td><i class="flag flag-${ String(input.name).toLowerCase()}" title=${ input.name }></i></td>`;
     html += `<td> ${ input.today_confirmed } </td>`;
     html += `<td> ${ input.today_recovered } </td>`;
     html += `<td> ${ input.today_deaths } </td>`;
-    // console.log(html)
+
     tbody.innerHTML = html;
+}
+
+function chartDrawer(input) {
+    var ctx = document.getElementById('myChart');
+    myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Death', 'Recovered'],
+            datasets: [{
+                label: '# of Votes',
+                data: [input.today_deaths, input.today_recovered],
+                backgroundColor: [
+                    'rgba(220, 53, 69)',
+                    'rgba(0, 183, 74)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            animation: false
+        }
+    });
 }
