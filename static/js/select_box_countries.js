@@ -3,12 +3,19 @@ let data = fetch('https://restcountries.eu/rest/v2/all').then(res => res.json())
 
     let html;
 
-    html += '<option selected>' + 'all' + '</option>';
+    html += '<option selected>' + 'All' + '</option>';
 
     for (let i = 0; i < data.length; i++) {
 
-        html += '<option>' + data[i].name + '</option>';
+        html += '<option>' + parenthesesRemover(data, i) + '</option>';
     }
 
     select.innerHTML = html;
 });
+
+
+function parenthesesRemover(input, index) {
+
+    return input[index].name.split('(')[0]
+
+}
