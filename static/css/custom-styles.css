@@ -97,3 +97,7 @@ main {
     height: 100px;
     margin: -100px 0 0;
 }
+
+select {
+    text-align-last: center;
+}
