@@ -16,12 +16,6 @@ let data = fetch('https://restcountries.eu/rest/v2/all').then(res => res.json())
 });
 
 
-function parenthesesRemover(input, index) {
-
-    return input[index].name.split('(')[0]
-
-}
-
 select.onchange = function(event) {
 
     let country = event.target.value;
@@ -39,6 +33,13 @@ select.onchange = function(event) {
 
     })
 }
+
+function parenthesesRemover(input, index) {
+
+    return input[index].name.split('(')[0]
+
+}
+
 
 function tableBodyCreate(input) {
     let tbody = document.getElementById('table-body');
