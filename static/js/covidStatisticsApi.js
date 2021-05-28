@@ -25,11 +25,11 @@ select.onchange = function(event) {
     fetch(url).then(res => res.json()).then(data => {
         let infoPerCountry = data.dates[date].countries[country]
 
-        tableBodyCreate(infoPerCountry)
+        tableBodyCreate(infoPerCountry.name, infoPerCountry.today_confirmed, infoPerCountry.today_recovered, infoPerCountry.today_deaths)
         if (myChart) {
             myChart.destroy()
         }
-        chartDrawer(infoPerCountry)
+        chartDrawer(infoPerCountry.today_deaths, infoPerCountry.today_recovered)
 
     })
 }
@@ -41,20 +41,19 @@ function parenthesesRemover(input, index) {
 }
 
 
-function tableBodyCreate(input) {
+function tableBodyCreate(name, confirmed, recovered, deaths) {
     let tbody = document.getElementById('table-body');
-    let rate = ((input.today_deaths - input.yesterday_deaths) / input.yesterday_deaths) * 100
     let html = '<tr>';
 
-    html += `<td><i class="flag flag-${ String(input.name).toLowerCase()}" title=${ input.name }></i></td>`;
-    html += `<td> ${ input.today_confirmed } </td>`;
-    html += `<td> ${ input.today_recovered } </td>`;
-    html += `<td> ${ input.today_deaths } </td>`;
+    html += `<td><i class="flag flag-${ String(name).toLowerCase()}" title=${ name }></i></td>`;
+    html += `<td> ${ confirmed } </td>`;
+    html += `<td> ${ recovered } </td>`;
+    html += `<td> ${ deaths } </td>`;
 
     tbody.innerHTML = html;
 }
 
-function chartDrawer(input) {
+function chartDrawer(deaths, recovered) {
     var ctx = document.getElementById('myChart');
     myChart = new Chart(ctx, {
         type: 'doughnut',
@@ -62,7 +61,7 @@ function chartDrawer(input) {
             labels: ['Death', 'Recovered'],
             datasets: [{
                 label: '# of Votes',
-                data: [input.today_deaths, input.today_recovered],
+                data: [deaths, recovered],
                 backgroundColor: [
                     'rgba(220, 53, 69)',
                     'rgba(0, 183, 74)'
