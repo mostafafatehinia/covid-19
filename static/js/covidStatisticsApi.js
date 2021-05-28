@@ -1,5 +1,6 @@
 let select = document.getElementById('select-box');
 var myChart;
+window.onload = init()
 
 let data = fetch('https://restcountries.eu/rest/v2/all').then(res => res.json()).then(data => {
 
@@ -21,17 +22,21 @@ select.onchange = function(event) {
     let country = event.target.value;
     let date = new Date().toISOString().substr(0, 10);
     let url = `https://api.covid19tracking.narrativa.com/api/${date}/country/${country}`
+    if (country === 'All') {
+        init()
+    } else {
+        fetch(url).then(res => res.json()).then(data => {
+            let infoPerCountry = data.dates[date].countries[country]
 
-    fetch(url).then(res => res.json()).then(data => {
-        let infoPerCountry = data.dates[date].countries[country]
+            tableBodyCreate(infoPerCountry.name, infoPerCountry.today_confirmed, infoPerCountry.today_recovered, infoPerCountry.today_deaths)
+            if (myChart) {
+                myChart.destroy()
+            }
+            chartDrawer(infoPerCountry.today_deaths, infoPerCountry.today_recovered)
 
-        tableBodyCreate(infoPerCountry.name, infoPerCountry.today_confirmed, infoPerCountry.today_recovered, infoPerCountry.today_deaths)
-        if (myChart) {
-            myChart.destroy()
-        }
-        chartDrawer(infoPerCountry.today_deaths, infoPerCountry.today_recovered)
+        })
+    }
 
-    })
 }
 
 function parenthesesRemover(input, index) {
@@ -44,8 +49,11 @@ function parenthesesRemover(input, index) {
 function tableBodyCreate(name, confirmed, recovered, deaths) {
     let tbody = document.getElementById('table-body');
     let html = '<tr>';
-
-    html += `<td><i class="flag flag-${ String(name).toLowerCase()}" title=${ name }></i></td>`;
+    if (name === 'all') {
+        html += `<td><img src="static/img/earth.png" title="World"></img></td>`;
+    } else {
+        html += `<td><i class="flag flag-${ String(name).toLowerCase()}" title=${ name }></i></td>`;
+    }
     html += `<td> ${ confirmed } </td>`;
     html += `<td> ${ recovered } </td>`;
     html += `<td> ${ deaths } </td>`;
@@ -82,4 +90,19 @@ function chartDrawer(deaths, recovered) {
             animation: false
         }
     });
+}
+
+function init() {
+    let date = new Date().toISOString().substr(0, 10);
+    let url = `https://api.covid19tracking.narrativa.com/api/${date}/country/all`
+    fetch(url).then(res => res.json()).then(data => {
+        let infoAllCountries = data.total
+
+        tableBodyCreate('all', infoAllCountries.today_confirmed, infoAllCountries.today_recovered, infoAllCountries.today_deaths)
+        if (myChart) {
+            myChart.destroy()
+        }
+        chartDrawer(infoAllCountries.today_deaths, infoAllCountries.today_recovered)
+
+    })
 }
