@@ -11,7 +11,7 @@ let data = fetch('https://restcountries.eu/rest/v2/all').then(res => res.json())
 
     for (let i = 0; i < data.length; i++) {
 
-        html += '<option>' + parenthesesRemover(data, i) + '</option>';
+        html += '<option>' + parenthesesRemover(data[i]) + '</option>';
     }
 
     select.innerHTML = html;
@@ -43,10 +43,13 @@ select.onchange = function(event) {
 
 }
 
-function parenthesesRemover(input, index) {
+function parenthesesRemover(input) {
 
-    return input[index].name.split('(')[0]
+    if (String(input.name).includes('Korea')) {
+        return input.name
+    }
 
+    return input.name.split('(')[0]
 }
 
 function whiteSpaceRemover(string) {
