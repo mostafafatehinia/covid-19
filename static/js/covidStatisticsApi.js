@@ -4,7 +4,7 @@ window.onload = init()
 
 let data = fetch('https://restcountries.eu/rest/v2/all').then(res => res.json()).then(data => {
 
-    let html;
+    let html = '';
 
     html += '<option selected>' + 'All' + '</option>';
 
@@ -105,4 +105,18 @@ function init() {
         chartDrawer(infoAllCountries.today_deaths, infoAllCountries.today_recovered)
 
     })
+}
+
+function filter() {
+    var keyword = document.getElementById("search").value;
+    var options = document.getElementsByTagName('option');
+    console.log(options[0].innerText)
+    for (var i = 0; i < options.length; i++) {
+        var txt = options[i].innerText;
+        if (txt.substring(0, keyword.length).toLowerCase() !== keyword.toLowerCase() && keyword.trim() !== "") {
+            options[i].style.display = 'none';
+        } else {
+            options[i].style.display = 'list-item';
+        }
+    }
 }
