@@ -98,8 +98,16 @@ main {
     margin: -100px 0 0;
 }
 
-select {
+#select-box {
     text-align-last: center;
+    height: 67px;
+}
+
+#search {
+    text-align: center;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #bdbdbd;
 }
 
 .card-title {
