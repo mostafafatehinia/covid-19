@@ -49,6 +49,11 @@ function parenthesesRemover(input, index) {
 
 }
 
+function whiteSpaceRemover(string) {
+
+    return string.replace(' ', '-')
+
+}
 
 function tableBodyCreate(name, confirmed, recovered, deaths) {
 
@@ -58,7 +63,7 @@ function tableBodyCreate(name, confirmed, recovered, deaths) {
     if (name === 'all') {
         html += `<td><img src="static/img/earth.png" title="World"></img></td>`;
     } else {
-        html += `<td><i class="flag flag-${ String(name).toLowerCase()}" title=${ name }></i></td>`;
+        html += `<td><i class="flag flag-${whiteSpaceRemover(String(name).toLowerCase())}" title=${ name }></i></td>`;
     }
     html += `<td> ${ confirmed } </td>`;
     html += `<td> ${ recovered } </td>`;
