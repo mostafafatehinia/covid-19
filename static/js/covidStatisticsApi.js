@@ -1,5 +1,6 @@
 let select = document.getElementById('select-box');
-var myChart;
+let myChart;
+let loader = document.getElementById('loader');
 
 window.onload = init()
 
@@ -24,11 +25,15 @@ select.onchange = function(event) {
     let date = new Date().toISOString().substr(0, 10);
     let url = `https://api.covid19tracking.narrativa.com/api/${date}/country/${country}`
 
+    loader.style.visibility = 'visible';
+
     if (country === 'All') {
         init()
     } else {
         fetch(url).then(res => res.json()).then(data => {
             let infoPerCountry = data.dates[date].countries[country]
+
+            loader.style.visibility = 'hidden';
 
             tableBodyCreate(infoPerCountry.name, infoPerCountry.today_confirmed, infoPerCountry.today_recovered, infoPerCountry.today_deaths)
             if (myChart) {
@@ -112,8 +117,12 @@ function init() {
     let date = new Date().toISOString().substr(0, 10);
     let url = `https://api.covid19tracking.narrativa.com/api/${date}/country/all`
 
+    loader.style.visibility = 'visible';
+
     fetch(url).then(res => res.json()).then(data => {
         let infoAllCountries = data.total
+
+        loader.style.visibility = 'hidden';
 
         tableBodyCreate('all', infoAllCountries.today_confirmed, infoAllCountries.today_recovered, infoAllCountries.today_deaths)
         if (myChart) {

@@ -121,3 +121,9 @@ main {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+#loader {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    visibility: hidden;
+}
