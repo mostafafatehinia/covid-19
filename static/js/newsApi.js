@@ -1,4 +1,3 @@
-let date = new Date().toISOString().substr(0, 10);
 let url = `https://saurav.tech/NewsAPI/top-headlines/category/health/us.json`;
 
 fetch(url).then(res => res.json()).then(data => {
@@ -15,7 +14,7 @@ fetch(url).then(res => res.json()).then(data => {
             html += `<img src="static/img/news2.jpg" class="card-img-top" alt="Some Issues Happen!">`;
         }
         html += '<div class="card-body">';
-        html += `<h5 class = "card-title">${ data.articles[i].title }</h5>`;
+        html += `<h5 class = "card-title">${data.articles[i].title}</h5>`;
         html += `<p class="card-text">${data.articles[i].description}</p>`;
         html += `<a href="${data.articles[i].url}" class="btn btn-primary">Read More</a>`;
         html += '</div></div></div>';

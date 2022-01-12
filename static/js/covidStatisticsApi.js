@@ -4,8 +4,7 @@ let loader = document.getElementById('loader');
 
 window.onload = init()
 
-let data = fetch('https://restcountries.eu/rest/v2/all').then(res => res.json()).then(data => {
-
+let data = fetch('https://restcountries.com/v2/all').then(res => res.json()).then(data => {
     let html = '';
 
     html += '<option selected>' + 'All' + '</option>';
@@ -19,10 +18,10 @@ let data = fetch('https://restcountries.eu/rest/v2/all').then(res => res.json())
 });
 
 
-select.onchange = function(event) {
+select.onchange = function (event) {
 
     let country = event.target.value;
-    let date = new Date().toISOString().substr(0, 10);
+    let date = new Date().toISOString().slice(0, 10)
     let url = `https://api.covid19tracking.narrativa.com/api/${date}/country/${country}`
 
     loader.style.visibility = 'visible';
@@ -48,22 +47,22 @@ select.onchange = function(event) {
 
 }
 
-function parenthesesRemover(input) {
+function parenthesesRemover (input) {
 
     if (String(input.name).includes('Korea')) {
         return input.name
     }
-
-    return input.name.split('(')[0]
+    console.log(input)
+    return String(input.name).split('(')[0]
 }
 
-function whiteSpaceRemover(string) {
+function whiteSpaceRemover (string) {
 
     return string.replace(' ', '-')
 
 }
 
-function tableBodyCreate(name, confirmed, recovered, deaths) {
+function tableBodyCreate (name, confirmed, recovered, deaths) {
 
     let tbody = document.getElementById('table-body');
     let html = '<tr>';
@@ -71,16 +70,16 @@ function tableBodyCreate(name, confirmed, recovered, deaths) {
     if (name === 'all') {
         html += `<td><img src="static/img/earth.png" title="World"></img></td>`;
     } else {
-        html += `<td><i class="flag flag-${whiteSpaceRemover(String(name).toLowerCase())}" title=${ name }></i></td>`;
+        html += `<td><i class="flag flag-${whiteSpaceRemover(String(name).toLowerCase())}" title=${name}></i></td>`;
     }
-    html += `<td> ${ confirmed } </td>`;
-    html += `<td> ${ recovered } </td>`;
-    html += `<td> ${ deaths } </td>`;
+    html += `<td> ${confirmed} </td>`;
+    html += `<td> ${recovered} </td>`;
+    html += `<td> ${deaths} </td>`;
 
     tbody.innerHTML = html;
 }
 
-function chartDrawer(deaths, recovered) {
+function chartDrawer (deaths, recovered) {
     let ctx = document.getElementById('myChart');
 
     myChart = new Chart(ctx, {
@@ -112,7 +111,7 @@ function chartDrawer(deaths, recovered) {
     });
 }
 
-function init() {
+function init () {
 
     let date = new Date().toISOString().substr(0, 10);
     let url = `https://api.covid19tracking.narrativa.com/api/${date}/country/all`
@@ -133,7 +132,7 @@ function init() {
     })
 }
 
-function filter() {
+function filter () {
 
     let keyword = document.getElementById("search").value;
     let options = document.getElementsByTagName('option');
